@@ -1,11 +1,11 @@
 project:
-  project_id: your_project_id
-  project_number: 123456789101
+  project_id: mulcahy-testproject
+  project_number: 616654894457
   location: global
 
 storage:
-  output_bucket : your-project-id-media-output
-  input_bucket : your-project-id-media-input
+  output_bucket : upload-proje
+  input_bucket : upload-proje
   
 db:
   video: metadata
