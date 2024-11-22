@@ -1,7 +1,14 @@
 from google.cloud import storage
 import datetime
 
+
+project_id = os.environ.get('PROJECT_ID')
+    if not project_id:
+        raise ValueError("The PROJECT_ID environment variable is not set.")
+
 class StorageService(): 
+
+
 
     def __init__(self, buckets, service_account_key_file, session_duration_minutes=5):
         """
@@ -10,7 +17,8 @@ class StorageService():
         GCS buckets upon initialization.
         """
 
-        self.storage_client = storage.Client.from_service_account_json(service_account_key_file)
+        #self.storage_client = storage.Client.from_service_account_json(service_account_key_file)
+        self.storage_client = storage.Client(project=project_id)
         self.buckets = [self.storage_client.bucket(bucket_name) for bucket_name in buckets]
         self.session_duration_minutes = session_duration_minutes
         self.signed_urls = {}
