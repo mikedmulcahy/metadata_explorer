@@ -3,8 +3,9 @@ import datetime
 
 
 project_id = os.environ.get('PROJECT_ID')
-    if not project_id:
-        raise ValueError("The PROJECT_ID environment variable is not set.")
+
+if not project_id:
+    raise ValueError("The PROJECT_ID environment variable is not set.")
 
 class StorageService(): 
 
