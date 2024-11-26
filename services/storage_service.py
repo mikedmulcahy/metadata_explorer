@@ -4,8 +4,7 @@ import datetime
 
 project_id = os.environ.get('PROJECT_ID')
 
-if not project_id:
-    raise ValueError("The PROJECT_ID environment variable is not set.")
+
 
 class StorageService(): 
 
@@ -19,6 +18,9 @@ class StorageService():
         """
 
         #self.storage_client = storage.Client.from_service_account_json(service_account_key_file)
+        if not project_id:
+            raise ValueError("The PROJECT_ID environment variable is not set.")
+        
         self.storage_client = storage.Client(project=project_id)
         self.buckets = [self.storage_client.bucket(bucket_name) for bucket_name in buckets]
         self.session_duration_minutes = session_duration_minutes
