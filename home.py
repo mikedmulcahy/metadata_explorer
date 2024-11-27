@@ -7,6 +7,30 @@ import ui_constants
 from utils import add_logo
 
 
+import os
+
+def print_volume_contents(volume_path):
+  """Prints the contents of a Linux volume using os.walk.
+
+  Args:
+    volume_path: The path to the volume.
+  """
+  try:
+    for root, dirs, files in os.walk(volume_path):
+      print(f"Directory: {root}")
+      for dir in dirs:
+        print(f"  Subdirectory: {dir}")
+      for file in files:
+        print(f"  File: {file}")
+
+  except FileNotFoundError:
+    print(f"Error: Volume not found at {volume_path}")
+
+if __name__ == "__main__":
+  volume_path = "/secrets/"  # Replace with the actual path
+  print_volume_contents(volume_path)
+
+
 my_logo = add_logo(logo_path="media/logo.jpeg", width=240, height=240)
 
 logo_row = st.columns(3)
