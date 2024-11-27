@@ -18,6 +18,7 @@ class CommonComponents:
                 st.Page("pages/images.py", title="Images"),
                 st.Page("pages/audio.py", title="Audio"),
                 st.Page("pages/articles.py", title="Articles"),
+                st.Page("pages/test.py", title="Test"),
             
         ], 
         "2 | Searching & Content Creation": [
