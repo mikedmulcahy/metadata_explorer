@@ -43,8 +43,5 @@ metadata_service = MetadataService(collection_name = 'article-demo')
 storage_service = st.session_state[ui_constants.SERVICE_STORAGE]
 
 
-@st.dialog("Article Detail", width="large")
-
-
-
-build_list_page()
+#@st.dialog("Article Detail", width="large")
+#build_list_page()
